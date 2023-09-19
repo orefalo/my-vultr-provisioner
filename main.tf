@@ -48,7 +48,10 @@ resource "vultr_instance" "my_instance" {
   label  = "my instance"
   region = random_shuffle.vultr_regions.result[0]
   plan   = var.one_cpu_one_gb_ram
-  os_id                  = "2076" # Alpine Linux x64
+  # 2076 Alpine
+  # 1743 Ubuntu 22
+  # 2104 Ubuntu 23
+  os_id                  = "1743"
   enable_ipv6            = false
   backups                = "disabled"
   activation_email       = false
